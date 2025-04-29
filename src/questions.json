@@ -1,0 +1,98 @@
+{
+  "Consultation": {
+    "title": "Consultation Template",
+    "description": "Fill out this template during a consultation. Leave any unanswered fields blank and click 'Copy All to Clipboard' to paste into Salesforce.",
+    "questions": [
+      "Contact Name:",
+      "Email:",
+      "Phone:",
+      "What time zone is the customer in:",
+      "What State does the business operate in?",
+      "Do they have employees that live/work in other states?",
+      "If working in other states, do they have a work location address or do employees work from home?",
+      "Previous Payroll Provider(s):",
+      "Ask if Migration is complete if coming from DT and notify the client that all work completed by onboarding will not affect the Chart of Accounts.",
+      "# of employees to key in/paid in this year (include both active/inactive):",
+      "Payroll frequency:",
+      "First payroll check date:",
+      "Do you pay via DD or checks?",
+      "What is the highest DD net payroll for the company?",
+      "What is the highest DD net paid employee per check run?",
+      "Are there any special tax exemptions for the company or for the employees, or do you pay all applicable payroll taxes?",
+      "Do you offer Vacation/Sick/PTO? If so, how are the hours accrued?",
+      "Do you offer Healthcare/Retirement? Is the healthcare pre/post tax deduction?",
+      "Do you have a company match for healthcare/retirement?",
+      "Do you have other deductions/wage garnishments we need to be aware of?",
+      "Any unusual payroll circumstances this year?",
+      "Unscheduled payrolls (bonus, term, etc.)",
+      "Missing payroll (started in Q2, etc.)",
+      "Large gaps in payroll",
+      "What taxes have been paid (941/944, State WH, 940, etc.):",
+      "Of the taxes paid, what paycheck date are taxes paid through?",
+      "Who is handling outstanding tax payments?",
+      "Past due notices or warnings received?"
+    ]
+  },
+  "General": {
+    "title": "General Template",
+    "description": "Use this template for documenting general interactions or call summaries. Leave any unanswered fields blank.",
+    "questions": [
+      "Name of customer",
+      "Reason for call",
+      "Information provided (including expectations/due dates set)",
+      "Next steps",
+      "Any other relevant information"
+    ]
+  },
+  "RunPayroll": {
+    "title": "Run Payroll Template",
+    "description": "Use this template for documenting a payroll run call. Leave any unanswered fields blank.",
+    "questions": [
+      "Payroll Run Notes",
+      "Contact Name:",
+      "Phone:",
+      "Email:",
+      "Has the customer signed authorization form? (y/n)",
+      "Milestone updated in the Run Payroll In IEP? (y/n)",
+      "Verify correct bank account (y/n)",
+      "Verify pay period and check date correct (y/n)",
+      "Correct FUD entered (y/n):",
+      "Did the Customer Submit Payroll (y/n)",
+      "Payroll Processed via DD or Checks:",
+      "Show reports center? (y/n)",
+      "Show Tax Center? (y/n)",
+      "Show Help Center:? (y/n)",
+      "Informed Customer to cancel old service?",
+      "Informed Customer of Survey?",
+      "Advise customer about Expert review?",
+      "Other Notes:",
+      "Delete any customer files/reports/etc. saved to your computer?",
+      "Update Status on Setup tab?",
+      "Any additional information?"
+    ]
+  },
+  "EndOfDayBuild": {
+    "title": "End of Day Build Template",
+    "description": "Use this template at the end of your build session. Leave any unanswered fields blank.",
+    "questions": [
+      "EEs Entered (including any applicable local taxes):",
+      "DD Entered:",
+      "Prior Payroll History Entered:",
+      "Tax Payments Entered for historical payrolls (closed/current quarters):",
+      "Needs so far:"
+    ]
+  },
+  "BuildComplete": {
+    "title": "Build Complete Template",
+    "description": "Use this template after completing an account build. Leave any unanswered fields blank.",
+    "questions": [
+      "Agent who Reviewed/Built the account:",
+      "Open Quarter Check Dates:",
+      "Corrections made to account:",
+      "Under/overpaid taxes as a result of incorrect history:",
+      "Tax Payments Recorded for historical payroll:",
+      "Items to Discuss with Client:",
+      "Additional Build notes (if needed):"
+    ]
+  }
+}

@@ -1,93 +1,134 @@
-.app-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-  }
-  
-  .question-item {
-    margin-bottom: 1rem;
-  }
-  
-  .question-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  
-  .question-input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  .copy-button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  body {
-    font-family: sans-serif;
-    background: #f9f9f9;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .question-block {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .copy-btn {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    background-color: #2d8cff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .copy-btn:hover {
-    background-color: #0066cc;
-  }
-  
-  .section-header {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7f9;
+  color: #393a3d;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.App-header {
+  background-color: #2ca01c;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.App-header.dark-mode {
+  background-color: #1b5e20;
+}
+
+.App-header h1, .App-header h2 {
+  margin: 10px 0;
+}
+
+template-nav {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 15px;  
+  padding: 10px 0;
+}
+
+template-nav button {
+  padding: 12px 20px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px 0;  
+}
+
+template-nav button:hover {
+  background-color: #2e7d32;
+}
+
+template-nav .active {
+  background-color: #248f14;
+}
+
+/* Main Section */
+main {
+  padding: 30px;
+  background-color: #f5f7f9;
+  overflow-y: auto;
+}
+
+main.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.template-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.template-form.dark-mode {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.question-block {
+  margin-bottom: 20px;
+}
+
+.question-block label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.question-block textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9fafb;
+  resize: none;
+}
+
+.question-block textarea:focus {
+  outline: none;
+  border-color: #388e3c;
+}
+
+button.copy-btn {
+  background-color: #2ca01c;
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.copy-btn:hover {
+  background-color: #248f14;
+}
+
+button.copy-btn.dark-mode {
+  background-color: #388e3c;
+}
+
+button.copy-btn.dark-mode:hover {
+  background-color: #2e7d32;
+}
