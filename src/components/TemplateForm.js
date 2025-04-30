@@ -11,12 +11,10 @@ const TemplateForm = ({ questions, darkMode }) => {
   };
 
   const generateOutput = () => {
-    return questions
-      .map((q) => {
-        const answer = answers[q] ? answers[q].trim() : 'N/A';
-        return `Q: ${q}\nA: ${answer}`;
-      })
-      .join('\n\n');
+    return questions.map((question) => {
+      const answer = answers[question]?.trim() || 'N/A';
+      return `${question}: ${answer}`;
+    }).join('\n');
   };
 
   const handleCopy = () => {
