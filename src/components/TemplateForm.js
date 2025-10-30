@@ -10,18 +10,32 @@ const TemplateForm = ({ questions, darkMode }) => {
     }));
   };
 
-  const generateOutput = () => {
-    return questions.map((question) => {
+  const handleGeneralCopy = () => {
+    const textOutput = questions.map((question) => {
       const answer = answers[question]?.trim() || 'N/A';
       return `${question}: ${answer}`;
     }).join('\n');
+
+    navigator.clipboard.writeText(textOutput).then(() => {
+      alert('Copied as plain text.');
+    });
   };
 
-  const handleCopy = () => {
-    const textToCopy = generateOutput();
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      alert('Template copied to clipboard!');
-    });
+  const handleIepCopy = () => {
+    const htmlOutput = questions.map((question) => {
+      const answer = answers[question]?.trim() || 'N/A';
+      return `<div><strong>${question}:</strong> ${answer}</div>`;
+    }).join('');
+
+    const blob = new Blob([htmlOutput], { type: 'text/html' });
+    const clipboardItem = new ClipboardItem({ 'text/html': blob });
+
+    navigator.clipboard.write([clipboardItem])
+      .then(() => alert('Copied as formatted HTML for IEP.'))
+      .catch((err) => {
+        console.error('HTML Copy failed:', err);
+        alert('Copy failed.');
+      });
   };
 
   return (
@@ -40,7 +54,10 @@ const TemplateForm = ({ questions, darkMode }) => {
         </div>
       ))}
 
-      <button className="copy-btn" onClick={handleCopy}>Copy All to Clipboard</button>
+      <div className="button-group">
+        <button className="copy-btn" onClick={handleGeneralCopy}>General Copy</button>
+        <button className="copy-btn" onClick={handleIepCopy}>IEP Copy</button>
+      </div>
     </div>
   );
 };

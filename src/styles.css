@@ -11,6 +11,12 @@ body {
   color: #393a3d;
 }
 
+/* Global dark mode surface so side gutters are dark */
+body.dark-mode {
+  background-color: #000;
+  color: #e0e0e0;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -34,14 +40,14 @@ body {
   margin: 10px 0;
 }
 
-template-nav {
+.template-nav {
   display: flex;
   flex-wrap: wrap;  
   gap: 15px;  
   padding: 10px 0;
 }
 
-template-nav button {
+.template-nav button {
   padding: 12px 20px;
   background-color: #388e3c;
   color: white;
@@ -52,11 +58,11 @@ template-nav button {
   margin: 5px 0;  
 }
 
-template-nav button:hover {
+.template-nav button:hover {
   background-color: #2e7d32;
 }
 
-template-nav .active {
+.template-nav .active {
   background-color: #248f14;
 }
 
@@ -80,9 +86,9 @@ main.dark-mode {
 }
 
 .template-form.dark-mode {
-  background-color: #2c2c2c;
-  color: #e0e0e0;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.08);
 }
 
 .question-block {
@@ -104,6 +110,17 @@ main.dark-mode {
   border-radius: 4px;
   background-color: #f9fafb;
   resize: none;
+}
+
+/* Dark mode fields: black background, white text */
+.template-form.dark-mode .question-block textarea {
+  background-color: #000;
+  color: #fff;
+  border-color: #444;
+}
+
+.template-form.dark-mode .question-block textarea::placeholder {
+  color: #aaa;
 }
 
 .question-block textarea:focus {
@@ -131,4 +148,69 @@ button.copy-btn.dark-mode {
 
 button.copy-btn.dark-mode:hover {
   background-color: #2e7d32;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.button-group button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #2ca01c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #248f14;
+}
+
+/* Offline overlay (non-dismissible) */
+.offline-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.offline-modal {
+  background: #fff;
+  color: #111;
+  max-width: 720px;
+  width: calc(100% - 40px);
+  padding: 28px;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.offline-modal h2 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.offline-modal p {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.offline-sign {
+  margin-top: 14px;
+  font-weight: 600;
 }
