@@ -5,7 +5,7 @@ import './styles.css';
 
 function App() {
   const [selectedTemplate, setSelectedTemplate] = useState('Consultation');
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);  // Set dark mode as default
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

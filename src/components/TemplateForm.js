@@ -3,17 +3,21 @@ import React, { useState } from 'react';
 const TemplateForm = ({ questions, darkMode }) => {
   const [answers, setAnswers] = useState({});
 
-  const handleChange = (question, value) => {
+  const handleChange = (key, value) => {
     setAnswers((prev) => ({
       ...prev,
-      [question]: value,
+      [key]: value,
     }));
   };
 
   const handleGeneralCopy = () => {
-    const textOutput = questions.map((question) => {
-      const answer = answers[question]?.trim() || 'N/A';
-      return `${question}: ${answer}`;
+    const textOutput = questions.map((item) => {
+      if (item.type === 'header') {
+        return `${item.text}`;
+      } else {
+        const answer = answers[item.text]?.trim() || 'N/A';
+        return `${item.text}: ${answer}`;
+      }
     }).join('\n');
 
     navigator.clipboard.writeText(textOutput).then(() => {
@@ -22,9 +26,13 @@ const TemplateForm = ({ questions, darkMode }) => {
   };
 
   const handleIepCopy = () => {
-    const htmlOutput = questions.map((question) => {
-      const answer = answers[question]?.trim() || 'N/A';
-      return `<div><strong>${question}:</strong> ${answer}</div>`;
+    const htmlOutput = questions.map((item) => {
+      if (item.type === 'header') {
+        return `<div><strong>${item.text}</strong></div>`;
+      } else {
+        const answer = answers[item.text]?.trim() || 'N/A';
+        return `<div><strong>${item.text}:</strong> ${answer}</div>`;
+      }
     }).join('');
 
     const blob = new Blob([htmlOutput], { type: 'text/html' });
@@ -43,14 +51,20 @@ const TemplateForm = ({ questions, darkMode }) => {
       <h2>Fill in the Template</h2>
       <p>Please provide answers for the following questions:</p>
 
-      {questions.map((question, index) => (
-        <div key={index} className="question-block">
-          <label>{question}</label>
-          <textarea
-            value={answers[question] || ''}
-            onChange={(e) => handleChange(question, e.target.value)}
-            placeholder="Type your answer here..."
-          />
+      {questions.map((item, index) => (
+        <div key={index}>
+          {item.type === 'header' ? (
+            <h3 className="section-header">{item.text}</h3>
+          ) : (
+            <div className="question-block">
+              <label>{item.text}</label>
+              <textarea
+                value={answers[item.text] || ''}
+                onChange={(e) => handleChange(item.text, e.target.value)}
+                placeholder="Type your answer here..."
+              />
+            </div>
+          )}
         </div>
       ))}
 
