@@ -40,10 +40,7 @@
       "File uploaded during call? Y/N",
       "If not, due date for file to meet EFP: (date)",
       "Other Call Notes",
-      "Admin Login/PW for QB Desktop portable file:",
-      "Other Call Notes",
-      "Documents uploaded during call? Y/N/Partial",
-      "If not uploaded, due date for documents to meet EFP"
+      "Admin Login/PW for QB Desktop portable file:"
     ]
   },
   "General": {
